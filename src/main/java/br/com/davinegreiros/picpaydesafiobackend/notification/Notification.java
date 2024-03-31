@@ -1,6 +1,5 @@
 package br.com.davinegreiros.picpaydesafiobackend.notification;
 
 public record Notification(
-  boolean messages
-) {
+  boolean message) {
 }
