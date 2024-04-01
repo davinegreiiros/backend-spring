@@ -13,8 +13,7 @@ public record Transaction(
     Long payer,
     Long payee,
     BigDecimal value,
-    @CreatedDate LocalDateTime createAt) {
-
+    @CreatedDate LocalDateTime createdAt) {
   public Transaction {
     value = value.setScale(2);
   }

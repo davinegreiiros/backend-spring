@@ -7,9 +7,13 @@ import org.springframework.data.annotation.Id;
 public record Wallet(
     @Id long id,
     String fullName,
-    String cpf,
+    Long cpf,
     String email,
     String password,
     int type,
-    BigDecimal balance) {
+    BigDecimal balance
+		) {
+			public Wallet debit(BigDecimal value) {
+				return new Wallet(id, fullName, cpf, email, password, type, balance.subtract(value));
+			}
 }
